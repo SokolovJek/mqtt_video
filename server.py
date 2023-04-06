@@ -3,7 +3,12 @@ import cv2 as cv
 import numpy as np
 import paho.mqtt.client as mqtt
 
-MQTT_BROKER = "172.25.000.1"
+
+
+username = 'name'
+password = 'pas'
+
+MQTT_BROKER = "192.168.155.48"
 MQTT_RECEIVE = "home/server"
 
 frame = np.zeros((240, 320, 3), np.uint8)
@@ -32,8 +37,10 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
+# set username, password if this neaded
+client.username_pw_set(username, password)
 
-client.connect(MQTT_BROKER)
+client.connect(MQTT_BROKER, port=8883)
 
 # Starting thread which will receive the frames
 client.loop_start()
