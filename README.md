@@ -16,4 +16,4 @@ client:<br>
 server:<br>
     <tb>virtualenv -p python3 server-env<br>
     source server-env/bin/activate<br>
-    pip install -r client-recuirements.txt
+    pip install -r server-recuirements.txt
