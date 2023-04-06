@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: run_client",
+            "type": "python",
+            "request": "launch",
+            "program": "client.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+
+    ]
+}

@@ -5,19 +5,26 @@ import base64
 import time
 
 
+username = 'name'
+password = 'pas'
+
 # Raspberry PI IP address
-MQTT_BROKER = "172.25.000.1"
+MQTT_BROKER = "192.168.155.48"
+# MQTT_BROKER = "172.25.112.1"
+
 # Topic on which frame will be published
 MQTT_SEND = "home/server"
 # Object to capture the frames
-cap = cv.VideoCapture(0)
+cap = cv.VideoCapture(4)
 # Phao-MQTT Clinet
 client = mqtt.Client()
+client.username_pw_set(username, password)
 # Establishing Connection with the Broker
-client.connect(MQTT_BROKER)
+client.connect(MQTT_BROKER, port=8883)
 try:
     while True:
         start = time.time()
+        time.sleep(2)
         # Read Frame
         _, frame = cap.read()
         # Encoding the Frame
