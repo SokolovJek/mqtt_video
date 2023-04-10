@@ -10,10 +10,10 @@ sudo apt install -y mosquitto-clients<br>
 client:<br>
     virtualenv -p python3 client-env<br>
     source client-env/bin/activate<br>
-    pip install -r client-recuirements.txt>
+    pip install -r client-requirements.txt>
 <br>
 <br>
 server:<br>
     <tb>virtualenv -p python3 server-env<br>
     source server-env/bin/activate<br>
-    pip install -r server-recuirements.txt
+    pip install -r server-requirements.txt
